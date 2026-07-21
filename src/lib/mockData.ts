@@ -20,6 +20,8 @@ export const initialDashboardStats: DashboardStats = {
   activeCustomers: 1042,
   employeesCount: 25,
   monthlyExpenses: 462000, // ₹4,62,000
+};
+
 export const initialAnimals: Animal[] = [
   {
     id: 'cow-101',
