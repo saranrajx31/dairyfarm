@@ -20,8 +20,6 @@ export const initialDashboardStats: DashboardStats = {
   activeCustomers: 1042,
   employeesCount: 25,
   monthlyExpenses: 462000, // ₹4,62,000
-};
-
 export const initialAnimals: Animal[] = [
   {
     id: 'cow-101',
@@ -30,7 +28,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 4.5,
     weight: 420,
-    photo: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=400&q=80',
     health_status: 'Healthy',
     purchase_date: '2023-01-15',
     status: 'Active',
@@ -44,7 +42,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 3.2,
     weight: 390,
-    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=400&q=80',
     health_status: 'Healthy',
     purchase_date: '2023-04-20',
     status: 'Active',
@@ -58,7 +56,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 5.0,
     weight: 550,
-    photo: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=400&q=80',
     health_status: 'Healthy',
     purchase_date: '2022-11-05',
     status: 'Active',
@@ -72,7 +70,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 2.8,
     weight: 360,
-    photo: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=400&q=80',
     health_status: 'Under Treatment',
     purchase_date: '2024-02-10',
     status: 'Active',
@@ -86,7 +84,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 4.1,
     weight: 410,
-    photo: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=400&q=80',
     health_status: 'Healthy',
     purchase_date: '2023-08-14',
     status: 'Active',
@@ -100,7 +98,7 @@ export const initialAnimals: Animal[] = [
     gender: 'Female',
     age: 3.8,
     weight: 580,
-    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=600&q=80',
+    photo: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=400&q=80',
     health_status: 'Sick',
     purchase_date: '2023-09-01',
     status: 'Active',

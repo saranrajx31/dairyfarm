@@ -167,9 +167,12 @@ export const AnimalsTab: React.FC = () => {
                 <tr key={animal.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
                   <td className="p-4 pl-6 font-bold text-slate-900 dark:text-white flex items-center gap-3">
                     <img
-                      src={animal.photo || 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=200&q=80'}
+                      src={animal.photo || 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=200&q=80'}
                       alt={animal.tag_number}
-                      className="w-9 h-9 rounded-xl object-cover border border-teal-200 dark:border-teal-800"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=200&q=80';
+                      }}
+                      className="w-9 h-9 rounded-xl object-cover border border-teal-200 dark:border-teal-800 shrink-0"
                     />
                     <div>
                       <span className="block font-heading text-sm text-[#0D8F87] dark:text-[#18B6A6]">
