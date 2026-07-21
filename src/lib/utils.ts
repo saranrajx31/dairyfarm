@@ -23,10 +23,10 @@ export function formatDate(dateString: string): string {
   }).format(date);
 }
 
-export function exportToCSV<T extends Record<string, any>>(filename: string, rows: T[]) {
+export function exportToCSV(filename: string, rows: Record<string, any>[]) {
   if (!rows || !rows.length) return;
   const separator = ',';
-  const keys = Object.keys(rows[0]) as (keyof T & string)[];
+  const keys = Object.keys(rows[0]);
   const csvContent =
     keys.join(separator) +
     '\n' +
@@ -34,13 +34,16 @@ export function exportToCSV<T extends Record<string, any>>(filename: string, row
       .map((row) => {
         return keys
           .map((k) => {
-            let cell = row[k] === null || row[k] === undefined ? '' : row[k];
-            cell = cell instanceof Date ? cell.toLocaleString() : cell.toString();
-            cell = cell.replace(/"/g, '""');
-            if (cell.search(/("|,|\n)/g) >= 0) {
-              cell = `"${cell}"`;
+            const val = row[k];
+            let cellStr = val === null || val === undefined ? '' : String(val);
+            if (val instanceof Date) {
+              cellStr = val.toLocaleString();
             }
-            return cell;
+            cellStr = cellStr.replace(/"/g, '""');
+            if (cellStr.search(/("|,|\n)/g) >= 0) {
+              cellStr = `"${cellStr}"`;
+            }
+            return cellStr;
           })
           .join(separator);
       })
