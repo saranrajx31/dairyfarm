@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatCurrency(amount: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-IN', {
     style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
+    currency: 'INR',
+    maximumFractionDigits: 0,
   }).format(amount);
 }
 
@@ -23,10 +23,10 @@ export function formatDate(dateString: string): string {
   }).format(date);
 }
 
-export function exportToCSV(filename: string, rows: object[]) {
+export function exportToCSV<T extends Record<string, any>>(filename: string, rows: T[]) {
   if (!rows || !rows.length) return;
   const separator = ',';
-  const keys = Object.keys(rows[0]);
+  const keys = Object.keys(rows[0]) as (keyof T & string)[];
   const csvContent =
     keys.join(separator) +
     '\n' +
@@ -34,7 +34,6 @@ export function exportToCSV(filename: string, rows: object[]) {
       .map((row) => {
         return keys
           .map((k) => {
-            // @ts-expect-error dynamic index
             let cell = row[k] === null || row[k] === undefined ? '' : row[k];
             cell = cell instanceof Date ? cell.toLocaleString() : cell.toString();
             cell = cell.replace(/"/g, '""');

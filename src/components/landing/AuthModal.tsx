@@ -150,13 +150,43 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
             </button>
           </form>
 
-          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
-            <button
-              onClick={() => setIsLogin(!isLogin)}
-              className="text-xs text-[#0D8F87] dark:text-[#18B6A6] font-medium hover:underline"
-            >
-              {isLogin ? "Don't have an account? Sign Up" : 'Already registered? Sign In'}
-            </button>
+          <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="p-3 bg-teal-50 dark:bg-teal-950/40 rounded-2xl border border-teal-200 dark:border-teal-800 text-left">
+              <span className="text-[11px] font-bold text-[#0D8F87] dark:text-[#18B6A6] block mb-1">
+                ⚡ Quick Demo Credentials:
+              </span>
+              <div className="flex gap-2 text-xs">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEmail('admin@dairyfarm.com');
+                    setPassword('password123');
+                  }}
+                  className="flex-1 py-1.5 px-2 bg-white dark:bg-slate-800 border border-teal-200 dark:border-teal-700 rounded-lg text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:border-[#0D8F87] transition-all text-center"
+                >
+                  👤 Admin
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEmail('manager@dairyfarm.com');
+                    setPassword('password123');
+                  }}
+                  className="flex-1 py-1.5 px-2 bg-white dark:bg-slate-800 border border-teal-200 dark:border-teal-700 rounded-lg text-[11px] font-semibold text-slate-700 dark:text-slate-200 hover:border-[#0D8F87] transition-all text-center"
+                >
+                  👩‍🌾 Manager
+                </button>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <button
+                onClick={() => setIsLogin(!isLogin)}
+                className="text-xs text-[#0D8F87] dark:text-[#18B6A6] font-medium hover:underline"
+              >
+                {isLogin ? "Don't have an account? Sign Up" : 'Already registered? Sign In'}
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

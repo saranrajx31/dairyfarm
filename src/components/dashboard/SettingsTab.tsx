@@ -7,10 +7,10 @@ export const SettingsTab: React.FC = () => {
   const { showToast } = useApp();
   const { isSupabaseLive } = useAuth();
 
-  const [farmName, setFarmName] = useState('Green Ridge Organic Dairy Farm');
-  const [address, setAddress] = useState('1204 Valley Pasture Rd, Green Ridge Farm State');
-  const [milkPrice, setMilkPrice] = useState<number>(2.5);
-  const [currency, setCurrency] = useState('USD ($)');
+  const [farmName, setFarmName] = useState('Nandi Organic Dairy Farm');
+  const [address, setAddress] = useState('1204 Dairy Circle, MG Road, Bengaluru, Karnataka');
+  const [milkPrice, setMilkPrice] = useState<number>(65);
+  const [currency, setCurrency] = useState('INR (₹)');
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();

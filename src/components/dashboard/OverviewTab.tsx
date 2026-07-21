@@ -134,7 +134,7 @@ export const OverviewTab: React.FC = () => {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-base font-bold font-heading text-slate-900 dark:text-white">
-                Revenue Growth ($)
+                Revenue Growth (₹)
               </h3>
               <p className="text-xs text-slate-400">Direct sales & subscriptions</p>
             </div>

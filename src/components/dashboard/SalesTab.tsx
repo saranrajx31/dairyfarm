@@ -175,7 +175,7 @@ export const SalesTab: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Price per Liter ($)</label>
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Price per Liter (₹)</label>
                     <input
                       type="number"
                       step="0.1"

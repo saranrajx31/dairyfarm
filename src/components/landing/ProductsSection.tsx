@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { dairyProducts } from '../../lib/mockData';
 import { useApp } from '../../context/AppContext';
+import { formatCurrency } from '../../lib/utils';
 import { ShoppingBag, Star, Check, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -100,7 +101,7 @@ export const ProductsSection: React.FC = () => {
 
                 <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <div>
-                    <span className="text-xl font-bold font-heading text-slate-900 dark:text-white">${prod.price.toFixed(2)}</span>
+                    <span className="text-xl font-bold font-heading text-slate-900 dark:text-white">{formatCurrency(prod.price)}</span>
                     <span className="text-[10px] text-slate-400 block">{prod.unit}</span>
                   </div>
 
