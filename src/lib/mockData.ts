@@ -1,0 +1,298 @@
+import {
+  Animal,
+  MilkProductionRecord,
+  Customer,
+  Sale,
+  Employee,
+  Expense,
+  HealthRecord,
+  BreedingRecord,
+  InventoryItem,
+  NotificationItem,
+  DairyProduct,
+  DashboardStats,
+} from '../types';
+
+export const initialDashboardStats: DashboardStats = {
+  totalAnimals: 214,
+  todaysMilk: 548.5,
+  monthlyRevenue: 28450,
+  activeCustomers: 1042,
+  employeesCount: 25,
+  monthlyExpenses: 11200,
+};
+
+export const initialAnimals: Animal[] = [
+  {
+    id: 'cow-101',
+    tag_number: 'COW-001',
+    breed: 'Holstein Friesian',
+    gender: 'Female',
+    age: 4.5,
+    weight: 620,
+    photo: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Healthy',
+    purchase_date: '2023-01-15',
+    status: 'Active',
+    daily_avg_milk: 28.5,
+    last_vaccination: '2026-05-10',
+  },
+  {
+    id: 'cow-102',
+    tag_number: 'COW-002',
+    breed: 'Jersey',
+    gender: 'Female',
+    age: 3.2,
+    weight: 480,
+    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Healthy',
+    purchase_date: '2023-04-20',
+    status: 'Active',
+    daily_avg_milk: 22.0,
+    last_vaccination: '2026-06-01',
+  },
+  {
+    id: 'cow-103',
+    tag_number: 'COW-003',
+    breed: 'Gir',
+    gender: 'Female',
+    age: 5.0,
+    weight: 510,
+    photo: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Healthy',
+    purchase_date: '2022-11-05',
+    status: 'Active',
+    daily_avg_milk: 18.5,
+    last_vaccination: '2026-04-18',
+  },
+  {
+    id: 'cow-104',
+    tag_number: 'COW-004',
+    breed: 'Sahiwal',
+    gender: 'Female',
+    age: 2.8,
+    weight: 460,
+    photo: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Under Treatment',
+    purchase_date: '2024-02-10',
+    status: 'Active',
+    daily_avg_milk: 16.0,
+    last_vaccination: '2026-03-12',
+  },
+  {
+    id: 'cow-105',
+    tag_number: 'COW-005',
+    breed: 'Swiss Brown',
+    gender: 'Female',
+    age: 4.1,
+    weight: 580,
+    photo: 'https://images.unsplash.com/photo-1546445317-29f4545f9d52?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Healthy',
+    purchase_date: '2023-08-14',
+    status: 'Active',
+    daily_avg_milk: 24.0,
+    last_vaccination: '2026-06-15',
+  },
+  {
+    id: 'cow-106',
+    tag_number: 'COW-006',
+    breed: 'Holstein Friesian',
+    gender: 'Female',
+    age: 3.8,
+    weight: 600,
+    photo: 'https://images.unsplash.com/photo-1570042702808-5858853f6053?auto=format&fit=crop&w=600&q=80',
+    health_status: 'Sick',
+    purchase_date: '2023-09-01',
+    status: 'Active',
+    daily_avg_milk: 12.0,
+    last_vaccination: '2026-01-20',
+  },
+];
+
+export const initialMilkRecords: MilkProductionRecord[] = [
+  { id: 'm-1', date: '2026-07-21', morning_milk: 285.5, evening_milk: 263.0, total_milk: 548.5, notes: 'Peak morning yield' },
+  { id: 'm-2', date: '2026-07-20', morning_milk: 278.0, evening_milk: 255.0, total_milk: 533.0, notes: 'Good climate' },
+  { id: 'm-3', date: '2026-07-19', morning_milk: 290.0, evening_milk: 260.5, total_milk: 550.5, notes: 'Fresh clover feed' },
+  { id: 'm-4', date: '2026-07-18', morning_milk: 275.0, evening_milk: 248.0, total_milk: 523.0, notes: 'Routine checkup day' },
+  { id: 'm-5', date: '2026-07-17', morning_milk: 282.0, evening_milk: 258.0, total_milk: 540.0, notes: 'Standard yield' },
+  { id: 'm-6', date: '2026-07-16', morning_milk: 270.0, evening_milk: 250.0, total_milk: 520.0, notes: 'Heavy rain' },
+  { id: 'm-7', date: '2026-07-15', morning_milk: 288.0, evening_milk: 265.0, total_milk: 553.0, notes: 'Optimal nutrition' },
+];
+
+export const initialCustomers: Customer[] = [
+  { id: 'c-1', name: 'Green Valley Organic Foods', phone: '+1 (555) 234-5678', email: 'orders@greenvalley.com', address: '124 Market St, Springfield', total_orders: 48, total_spent: 8400, status: 'Active', created_at: '2024-01-10' },
+  { id: 'c-2', name: 'Sunrise Bakery & Cafe', phone: '+1 (555) 876-5432', email: 'bakery@sunrise.org', address: '89 Baker Rd, Oak Ridge', total_orders: 62, total_spent: 11200, status: 'Active', created_at: '2023-11-15' },
+  { id: 'c-3', name: 'Robert Chen', phone: '+1 (555) 345-6789', email: 'robert.c@gmail.com', address: '45 Pine Ave, Sector 4', total_orders: 14, total_spent: 780, status: 'Active', created_at: '2024-03-22' },
+  { id: 'c-4', name: 'Pure Choice Supermarket', phone: '+1 (555) 901-2345', email: 'purchase@purechoice.com', address: '500 Commercial Blvd', total_orders: 35, total_spent: 15600, status: 'Active', created_at: '2023-08-05' },
+  { id: 'c-5', name: 'Elena Rostova', phone: '+1 (555) 678-9012', email: 'elena.rostova@yahoo.com', address: '12 Rosewood Lane', total_orders: 9, total_spent: 450, status: 'Active', created_at: '2024-05-18' },
+];
+
+export const initialSales: Sale[] = [
+  { id: 's-101', invoice_number: 'INV-2026-089', customer_id: 'c-1', customer_name: 'Green Valley Organic Foods', product_name: 'Raw Whole Milk', milk_quantity: 200, price_per_liter: 2.5, total_price: 500, payment_status: 'Paid', date: '2026-07-21' },
+  { id: 's-102', invoice_number: 'INV-2026-090', customer_id: 'c-2', customer_name: 'Sunrise Bakery & Cafe', product_name: 'Artisanal Butter', milk_quantity: 50, price_per_liter: 8.0, total_price: 400, payment_status: 'Paid', date: '2026-07-20' },
+  { id: 's-103', invoice_number: 'INV-2026-091', customer_id: 'c-4', customer_name: 'Pure Choice Supermarket', product_name: 'Organic Ghee & Paneer', milk_quantity: 350, price_per_liter: 4.2, total_price: 1470, payment_status: 'Pending', date: '2026-07-20' },
+  { id: 's-104', invoice_number: 'INV-2026-092', customer_id: 'c-3', customer_name: 'Robert Chen', product_name: 'A2 Farm Fresh Milk', milk_quantity: 20, price_per_liter: 3.0, total_price: 60, payment_status: 'Paid', date: '2026-07-19' },
+  { id: 's-105', invoice_number: 'INV-2026-093', customer_id: 'c-5', customer_name: 'Elena Rostova', product_name: 'Fresh Curd & Cream', milk_quantity: 15, price_per_liter: 4.0, total_price: 60, payment_status: 'Overdue', date: '2026-07-10' },
+];
+
+export const initialEmployees: Employee[] = [
+  { id: 'emp-1', name: 'Dr. Marcus Vance', role: 'Chief Veterinarian', phone: '+1 (555) 111-2233', salary: 4500, attendance_status: 'Present', join_date: '2022-03-01' },
+  { id: 'emp-2', name: 'Sarah Jenkins', role: 'Farm Operations Manager', phone: '+1 (555) 222-3344', salary: 3800, attendance_status: 'Present', join_date: '2021-06-15' },
+  { id: 'emp-3', name: 'David Miller', role: 'Milking Technician Supervisor', phone: '+1 (555) 333-4455', salary: 2800, attendance_status: 'Present', join_date: '2023-01-10' },
+  { id: 'emp-4', name: 'Anita Patel', role: 'Quality Assurance Lead', phone: '+1 (555) 444-5566', salary: 3200, attendance_status: 'On Leave', join_date: '2023-09-20' },
+  { id: 'emp-5', name: 'James Wilson', role: 'Feed & Nutrition Specialist', phone: '+1 (555) 555-6677', salary: 2600, attendance_status: 'Present', join_date: '2024-02-01' },
+];
+
+export const initialExpenses: Expense[] = [
+  { id: 'exp-1', category: 'Feed', amount: 3400, description: 'Premium Organic Hay & Protein Concentrate Supply', date: '2026-07-18', payment_method: 'Bank Transfer' },
+  { id: 'exp-2', category: 'Medicine', amount: 850, description: 'FMD Vaccination Batch & Udder Care Ointments', date: '2026-07-15', payment_method: 'Card' },
+  { id: 'exp-3', category: 'Electricity', amount: 1250, description: 'Monthly Cooling Tank & Milking Parlor Utilities', date: '2026-07-05', payment_method: 'Bank Transfer' },
+  { id: 'exp-4', category: 'Maintenance', amount: 480, description: 'Automated Milking Machine Calibration & Service', date: '2026-07-12', payment_method: 'UPI' },
+  { id: 'exp-5', category: 'Transport', amount: 620, description: 'Refrigerated Cold-Chain Van Fuel & Tolls', date: '2026-07-19', payment_method: 'Cash' },
+];
+
+export const initialHealthRecords: HealthRecord[] = [
+  { id: 'h-1', animal_id: 'cow-101', animal_tag: 'COW-001', type: 'Vaccination', description: 'Foot & Mouth Disease (FMD) Booster', doctor: 'Dr. Marcus Vance', cost: 45, record_date: '2026-05-10', next_due_date: '2026-11-10', status: 'Completed' },
+  { id: 'h-2', animal_id: 'cow-104', animal_tag: 'COW-004', type: 'Treatment', description: 'Mastitis Care & Antibiotic Therapy', doctor: 'Dr. Marcus Vance', cost: 120, record_date: '2026-07-19', next_due_date: '2026-07-25', status: 'Scheduled' },
+  { id: 'h-3', animal_id: 'cow-106', animal_tag: 'COW-006', type: 'Routine Checkup', description: 'Metabolic & Electrolyte Panel', doctor: 'Dr. Marcus Vance', cost: 75, record_date: '2026-07-20', next_due_date: '2026-07-27', status: 'Scheduled' },
+  { id: 'h-4', animal_id: 'cow-102', animal_tag: 'COW-002', type: 'Deworming', description: 'Quarterly Broad Spectrum Parasite Treatment', doctor: 'Dr. Marcus Vance', cost: 30, record_date: '2026-06-01', next_due_date: '2026-09-01', status: 'Completed' },
+];
+
+export const initialBreedingRecords: BreedingRecord[] = [
+  { id: 'b-1', animal_id: 'cow-101', animal_tag: 'COW-001', breeding_date: '2025-10-15', pregnancy_status: 'Confirmed', expected_delivery: '2026-07-25', notes: 'Healthy calf development observed on ultrasound.' },
+  { id: 'b-2', animal_id: 'cow-103', animal_tag: 'COW-003', breeding_date: '2026-01-10', pregnancy_status: 'Confirmed', expected_delivery: '2026-10-18', notes: 'Second lactation cycle.' },
+  { id: 'b-3', animal_id: 'cow-105', animal_tag: 'COW-005', breeding_date: '2026-05-02', pregnancy_status: 'Pending', expected_delivery: '2027-02-08', notes: 'Artificial insemination completed.' },
+];
+
+export const initialInventory: InventoryItem[] = [
+  { id: 'inv-1', item_name: 'Organic Alfalfa Hay', category: 'Feed', quantity: 4500, unit: 'kg', reorder_level: 1000, price: 0.8 },
+  { id: 'inv-2', item_name: 'High-Protein Grain Concentrate', category: 'Feed', quantity: 1800, unit: 'kg', reorder_level: 500, price: 1.5 },
+  { id: 'inv-3', item_name: 'Teat Dip Sanitizer Solution', category: 'Supplies', quantity: 120, unit: 'Liters', reorder_level: 30, price: 12.0 },
+  { id: 'inv-4', item_name: 'Glass Milk Bottles (1L)', category: 'Packaging', quantity: 3500, unit: 'Units', reorder_level: 800, price: 0.45 },
+  { id: 'inv-5', item_name: 'Calcium Boost Supplements', category: 'Medicine', quantity: 85, unit: 'Packs', reorder_level: 20, price: 25.0 },
+];
+
+export const initialNotifications: NotificationItem[] = [
+  { id: 'n-1', title: 'Upcoming Vaccination', message: 'COW-004 Mastitis follow-up is scheduled for July 25.', type: 'warning', is_read: false, created_at: '10 mins ago' },
+  { id: 'n-2', title: 'Delivery Alert', message: 'COW-001 expected calving due date in 4 days.', type: 'info', is_read: false, created_at: '1 hour ago' },
+  { id: 'n-3', title: 'High Milk Yield Recorded', message: 'Today morning yield hit 285.5 L (Peak record)!', type: 'success', is_read: true, created_at: '5 hours ago' },
+  { id: 'n-4', title: 'Low Feed Alert', message: 'High-Protein Grain Concentrate approaching reorder level.', type: 'alert', is_read: true, created_at: '1 day ago' },
+];
+
+export const dairyProducts: DairyProduct[] = [
+  {
+    id: 'p-1',
+    name: 'Raw A2 Whole Milk',
+    category: 'Milk',
+    price: 3.5,
+    unit: '1 Liter Bottle',
+    fatContent: '4.2% Fat',
+    description: '100% pure, unprocessed A2 milk collected fresh every morning from grass-fed cows.',
+    image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80',
+    badge: 'Best Seller',
+    inStock: true,
+  },
+  {
+    id: 'p-2',
+    name: 'Golden Farm Butter',
+    category: 'Butter',
+    price: 6.9,
+    unit: '500g Block',
+    fatContent: '82% Milk Fat',
+    description: 'Slow-churned artisanal cultured butter made with rich sweet cream and sea salt.',
+    image: 'https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80',
+    badge: 'Artisanal',
+    inStock: true,
+  },
+  {
+    id: 'p-3',
+    name: 'Aged Farmhouse Cheese',
+    category: 'Cheese',
+    price: 9.5,
+    unit: '300g Wheel',
+    fatContent: 'Natural Aged',
+    description: 'Handcrafted raw milk cheese aged for 6 months in natural limestone caves for deep flavor.',
+    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=600&q=80',
+    badge: 'Award Winner',
+    inStock: true,
+  },
+  {
+    id: 'p-4',
+    name: 'Organic Probiotic Curd',
+    category: 'Curd',
+    price: 3.2,
+    unit: '1 kg Tub',
+    fatContent: '3.8% Fat',
+    description: 'Thick, creamy set curd with live active probiotic cultures for optimal gut digestion.',
+    image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80',
+    badge: 'Organic',
+    inStock: true,
+  },
+  {
+    id: 'p-5',
+    name: 'Fresh Malai Paneer',
+    category: 'Paneer',
+    price: 5.4,
+    unit: '400g Pack',
+    fatContent: 'High Protein',
+    description: 'Soft, velvety cottage cheese pressed fresh daily without any artificial preservatives.',
+    image: 'https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80',
+    badge: 'Fresh Daily',
+    inStock: true,
+  },
+  {
+    id: 'p-6',
+    name: 'Pure Vedic Cow Ghee',
+    category: 'Ghee',
+    price: 18.0,
+    unit: '500 ml Jar',
+    fatContent: '100% Clarified Butter',
+    description: 'Traditional bilona method golden clarified butter with rich granular texture and aroma.',
+    image: 'https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=600&q=80',
+    badge: 'Premium Bilona',
+    inStock: true,
+  },
+  {
+    id: 'p-7',
+    name: 'Greek Style Farm Yogurt',
+    category: 'Yogurt',
+    price: 4.5,
+    unit: '450g Tub',
+    fatContent: 'Strained Cream',
+    description: 'Triple-strained ultra-thick yogurt layered with organic berries or natural honey.',
+    image: 'https://images.unsplash.com/photo-1571212515416-fef01fc43637?auto=format&fit=crop&w=600&q=80',
+    badge: 'High Protein',
+    inStock: true,
+  },
+  {
+    id: 'p-8',
+    name: 'Thick Heavy Cream',
+    category: 'Cream',
+    price: 4.8,
+    unit: '350 ml Bottle',
+    fatContent: '40% Butterfat',
+    description: 'Silky rich whipping cream perfect for baking, specialty coffee, or desserts.',
+    image: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=600&q=80',
+    badge: 'Chef Choice',
+    inStock: true,
+  },
+];
+
+export const monthlyMilkYieldData = [
+  { month: 'Jan', yield: 14200, sales: 35500 },
+  { month: 'Feb', yield: 13800, sales: 34500 },
+  { month: 'Mar', yield: 15500, sales: 38750 },
+  { month: 'Apr', yield: 16200, sales: 40500 },
+  { month: 'May', yield: 15900, sales: 39750 },
+  { month: 'Jun', yield: 16800, sales: 42000 },
+  { month: 'Jul', yield: 17200, sales: 43000 },
+];
+
+export const monthlyExpensesData = [
+  { category: 'Feed', amount: 14500, color: '#0D8F87' },
+  { category: 'Salary', amount: 9800, color: '#18B6A6' },
+  { category: 'Electricity', amount: 3200, color: '#F7C948' },
+  { category: 'Medicine', amount: 2400, color: '#EF4444' },
+  { category: 'Maintenance', amount: 1800, color: '#8B5CF6' },
+  { category: 'Transport', amount: 2100, color: '#F59E0B' },
+];
